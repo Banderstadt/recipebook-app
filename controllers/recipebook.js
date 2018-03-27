@@ -57,12 +57,12 @@ router.post('/', (req, res, next) => {
                 message: 'Failed to create a new recipe ' + err
             });
 
-        } else
+        } else {
             res.json({
                 success: true,
                 message: 'Added successfully'
             });
-
+        }
     });
 });
 
@@ -75,17 +75,18 @@ router.delete('/:id', (req, res, next) => {
         if (err) {
             res.json({
                 success: false,
-                message: 'Failed to delete the recipe ' + err
+                message: 'Failed to delete the recipe. ' + err
             });
         } else if (recipe) {
             res.json({
                 success: true,
-                message: 'Deleted successfully'
+                message: 'Deleted successfully.'
             });
-        } else
+        } else {
             res.json({
                 success: false
             });
+        }
     });
 });
 

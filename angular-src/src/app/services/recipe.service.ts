@@ -23,6 +23,15 @@ export class RecipeService {
         .map(res => <Recipe[]>res.recipes);
 }
 
+// API: GET /recipebook
+public getOneRecipe(id): Observable<Recipe[]> {
+
+  const URI = `${this.serverApi}/recipebook/` + id;
+  return this.http.get(URI)
+      .map(res => res.json())
+      .map(res => <Recipe[]>res.recipe);
+}
+
 
 // API: POST /recipebook
 public addRecipe(recipe: Recipe) {
@@ -32,8 +41,9 @@ public addRecipe(recipe: Recipe) {
   console.log(body);
   headers.append('Content-Type', 'application/json');
   return this.http.post(URI, body , {headers: headers})
-  .map(res => res.json());
+    .map(res => res.json());
 }
+
 
 }
 
