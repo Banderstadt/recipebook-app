@@ -10,10 +10,11 @@ import { Recipe } from '../../models/recipe.model';
 export class RecipeListComponent implements OnInit {
   // recipes property which is an array of recipe type
   private recipes: Recipe[] = [];
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService) {
+    console.log('RecipeService Initialized...');
+  }
 
   ngOnInit() {
-
     // Load all recipes on init
     this.loadRecipes();
   }

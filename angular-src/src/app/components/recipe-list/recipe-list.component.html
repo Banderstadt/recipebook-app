@@ -4,7 +4,7 @@
       <h1 class="jumbotron-heading">RecipeBook</h1>
       <p class="lead text-muted">This is the application with collection of delicious recipes. Here you can add, view or modify recipes.</p>
       <p>
-        <!-- Button trigger modal -->
+        <!-- Add recipe modal button -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Recipe</button>
       </p>
     </div>
@@ -19,7 +19,7 @@
               <p class="card-text">{{recipe.name}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                    <!-- Button trigger modal -->
+                    <!-- View recipe modal button -->
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
@@ -31,65 +31,4 @@
       </div>
     </div>
   </div>
-
-  <!-- Add Recipe Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a recipe</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <form>
-            <div class="form-group">
-              <label for="formGroupExampleInput">Recipe Name</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Type a recipe name">
-            </div>
-            <div class="form-group">
-              <label for="formGroupExampleInput2">Ingredients</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingredients">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-          </form>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- View Recipe Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Recipe</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" *ngFor="let recipe of recipes">
-        <label>Recipe Name:<p><em>{{recipe.name}}</em></p></label>
-        <br>
-        <label>Ingredients:<p><em>{{recipe.ingredients}}</em></p></label>
-        <br>
-        <label>Description:<p><em>{{recipe.description}}</em></p></label>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
